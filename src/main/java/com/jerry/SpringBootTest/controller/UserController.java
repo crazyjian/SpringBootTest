@@ -22,6 +22,11 @@ public class UserController {
 	 // 创建线程安全的Map 
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>()); 
  
+    @RequestMapping(value="/hello") 
+    public String login() { 
+        return "hello world";
+    } 
+    
     @RequestMapping(value="/", method=RequestMethod.GET) 
     public List<User> getUserList() { 
         // 处理"/users/"的GET请求，用来获取用户列表 
